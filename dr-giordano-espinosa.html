@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Giordano Espinosa · Medicina Estética | Monterrey</title>
+  <meta name="description" content="Dr. Giordano Espinosa — Especialista en Medicina Estética y Antienvejecimiento. +40 tratamientos no quirúrgicos en San Pedro Garza García, Monterrey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:        #C9A96E;
+      --gold-light:  #E8D5B7;
+      --gold-dark:   #A67C45;
+      --black:       #0F0F0F;
+      --gray-dark:   #2D2D2D;
+      --gray-mid:    #6B6B6B;
+      --gray-light:  #D9D9D9;
+      --cream:       #FAFAF8;
+      --cream-warm:  #F5F0EA;
+      --white:       #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--gray-dark);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.15; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+
+    /* ─── Utility ─── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .gold-line {
+      display: block;
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin-bottom: 16px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── Navigation ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+      transition: padding 0.3s;
+    }
+    nav .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--black);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-dark) !important; }
+    .nav-toggle { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-toggle span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--gray-dark); margin: 5px 0;
+      transition: all 0.3s;
+    }
+    @media (max-width: 768px) {
+      .nav-links.nav-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 62px; left: 0; right: 0;
+        background: rgba(250,250,248,0.97);
+        padding: 20px 24px 28px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(201,169,110,0.2);
+        z-index: 200;
+      }
+    }
+
+    /* ─── Hero ─── */
+    #hero {
+      min-height: 100vh;
+      padding-top: 80px;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%);
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 80px; align-items: center;
+      padding: 80px 0;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow .line { width: 32px; height: 1px; background: var(--gold); }
+    .hero-eyebrow span {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold);
+    }
+    h1.hero-title {
+      font-size: clamp(42px, 5vw, 68px);
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.05;
+    }
+    h1.hero-title em { color: var(--gold); font-style: italic; }
+    .hero-subtitle {
+      font-size: 15px; font-weight: 300;
+      color: var(--gray-mid);
+      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+    }
+    .hero-desc {
+      font-size: 16px; line-height: 1.75;
+      color: var(--gray-dark);
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      padding: 15px 36px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 15px 36px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--white); transform: translateY(-1px); }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 52px;
+      padding-top: 32px;
+      border-top: 1px solid var(--gold-light);
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 300;
+      color: var(--black);
+      line-height: 1;
+    }
+    .hero-stat-num sup { font-size: 18px; vertical-align: super; color: var(--gold); }
+    .hero-stat-label {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gray-mid); margin-top: 4px;
+    }
+
+    /* Instagram Card */
+    .ig-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.10), 0 8px 24px rgba(201,169,110,0.12);
+      overflow: hidden;
+      position: relative;
+    }
+    .ig-card-header {
+      padding: 28px 24px 20px;
+      background: linear-gradient(180deg, #FAFAFA 0%, var(--white) 100%);
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .ig-profile-row {
+      display: flex; align-items: center; gap: 20px;
+      margin-bottom: 20px;
+    }
+    .ig-avatar-wrap {
+      width: 80px; height: 80px; flex-shrink: 0;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+    .ig-avatar {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-light), var(--cream-warm));
+      overflow: hidden;
+      border: 3px solid var(--white);
+    }
+    .ig-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .ig-avatar-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 500;
+      color: var(--gold-dark);
+      background: linear-gradient(135deg, #f5ede0, #ede0cc);
+    }
+    .ig-name-block { flex: 1; }
+    .ig-handle {
+      font-size: 13px; font-weight: 600;
+      color: var(--black);
+      display: flex; align-items: center; gap: 5px;
+      margin-bottom: 2px;
+    }
+    .ig-verified {
+      width: 15px; height: 15px;
+      background: #0095F6;
+      border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 9px; color: white; font-weight: 700;
+    }
+    .ig-name { font-size: 12px; color: #8E8E8E; }
+    .ig-follow-btn {
+      background: #0095F6;
+      color: white;
+      border: none;
+      padding: 7px 18px;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer;
+    }
+    .ig-stats-row {
+      display: flex; justify-content: space-around;
+      text-align: center;
+    }
+    .ig-stat-val { font-size: 16px; font-weight: 700; color: var(--black); }
+    .ig-stat-key { font-size: 12px; color: #8E8E8E; }
+    .ig-bio {
+      padding: 16px 24px 20px;
+      font-size: 13px; line-height: 1.6;
+      color: var(--gray-dark);
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .ig-bio strong { display: block; margin-bottom: 4px; font-weight: 700; font-size: 14px; }
+    .ig-bio .ig-category {
+      color: #8E8E8E; font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .ig-bio .ig-link {
+      color: #385898; font-size: 13px; font-weight: 500;
+      display: block; margin-top: 6px;
+    }
+    .ig-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .ig-grid-item {
+      aspect-ratio: 1;
+      background: var(--cream-warm);
+      overflow: hidden; position: relative;
+    }
+    .ig-grid-item img { width: 100%; height: 100%; object-fit: cover; }
+    .ig-grid-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      background: linear-gradient(135deg, #f5ede0 0%, #e8d5b7 100%);
+      color: var(--gold-dark);
+    }
+    .ig-grid-placeholder.p2 { background: linear-gradient(135deg, #ede0cc 0%, #d9c4a0 100%); }
+    .ig-grid-placeholder.p3 { background: linear-gradient(135deg, #e8d5b7 0%, #f5ede0 100%); }
+    .ig-grid-placeholder.p4 { background: linear-gradient(135deg, #d9c4a0 0%, #e8d5b7 100%); }
+    .ig-grid-placeholder.p5 { background: linear-gradient(135deg, #f5ede0 0%, #ede0cc 100%); }
+    .ig-grid-placeholder.p6 { background: linear-gradient(135deg, #ede0cc 0%, #f5ede0 100%); }
+    .ig-social-bar {
+      padding: 14px 24px;
+      display: flex; gap: 16px;
+      border-top: 1px solid #F0F0F0;
+      background: #FAFAFA;
+    }
+    .ig-social-link {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #8E8E8E;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .ig-social-link svg { width: 14px; height: 14px; fill: currentColor; }
+    .ig-tiktok-badge {
+      margin-left: auto;
+      background: var(--black);
+      color: white;
+      font-size: 10px; font-weight: 700;
+      padding: 4px 10px; border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── Section Common ─── */
+    section { padding: 100px 0; }
+    .section-header { margin-bottom: 64px; }
+    .section-header h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      font-size: 16px; line-height: 1.7;
+      color: var(--gray-mid); max-width: 520px;
+    }
+    .section-header.center { text-align: center; }
+    .section-header.center p { margin: 0 auto; }
+    .section-header.center .gold-line { margin: 0 auto 16px; }
+
+    /* ─── About ─── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-image-main {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--cream-warm), var(--gold-light));
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .about-image-main img { width: 100%; height: 100%; object-fit: cover; }
+    .about-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px; font-weight: 300;
+      color: var(--gold);
+      opacity: 0.4;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--gold);
+      color: var(--white);
+      padding: 20px 24px;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(201,169,110,0.3);
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px; font-weight: 300; line-height: 1;
+    }
+    .about-badge-text {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      opacity: 0.9; margin-top: 4px;
+    }
+    .about-content h2 {
+      font-size: clamp(30px, 3.5vw, 46px);
+      color: var(--black); margin-bottom: 20px;
+    }
+    .about-content p {
+      font-size: 16px; line-height: 1.8;
+      color: var(--gray-mid); margin-bottom: 16px;
+    }
+    .credentials { margin: 36px 0; display: flex; flex-direction: column; gap: 16px; }
+    .credential-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
+    .credential-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .credential-title { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
+    .credential-sub { font-size: 13px; color: var(--gray-mid); }
+
+    /* ─── Services ─── */
+    #services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 40px 32px;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1; margin-bottom: 20px;
+    }
+    .service-icon { font-size: 28px; margin-bottom: 16px; }
+    .service-card h3 {
+      font-size: 22px;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 14px; line-height: 1.7;
+      color: var(--gray-mid);
+    }
+    .service-tag {
+      display: inline-block; margin-top: 16px;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── Gallery ─── */
+    #gallery { background: var(--black); padding: 80px 0; }
+    #gallery .section-header h2 { color: var(--white); }
+    #gallery .section-header p { color: rgba(255,255,255,0.5); }
+    #gallery .tag { color: var(--gold); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 8px;
+    }
+    .gallery-item {
+      overflow: hidden; border-radius: 2px;
+      position: relative; cursor: pointer;
+    }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item-inner {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #1A1A1A;
+      overflow: hidden; position: relative;
+      transition: transform 0.4s;
+    }
+    .gallery-item.tall .gallery-item-inner { aspect-ratio: auto; height: 100%; }
+    .gallery-item.wide .gallery-item-inner { aspect-ratio: 2/1; }
+    .gallery-item:hover .gallery-item-inner { transform: scale(1.04); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: rgba(201,169,110,0.4);
+      font-size: 32px;
+    }
+    .gallery-placeholder span {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end; padding: 16px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-overlay-text {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .gallery-cta { text-align: center; margin-top: 40px; }
+    .gallery-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,169,110,0.4);
+      padding-bottom: 4px;
+      transition: color 0.2s;
+    }
+    .gallery-cta a:hover { color: var(--gold-light); }
+
+    /* ─── Social Proof ─── */
+    #social { background: var(--cream-warm); }
+    .social-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; margin-top: 48px;
+    }
+    .social-card {
+      background: var(--white);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .social-platform {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gray-mid); margin-bottom: 16px;
+    }
+    .social-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px; font-weight: 300;
+      color: var(--black); line-height: 1;
+    }
+    .social-num sup { font-size: 24px; vertical-align: super; color: var(--gold); }
+    .social-unit {
+      font-size: 13px; color: var(--gray-mid);
+      margin-top: 4px;
+    }
+    .social-icon { font-size: 28px; margin-bottom: 12px; }
+
+    /* ─── Process ─── */
+    #process { background: var(--white); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; margin-top: 48px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px; left: 12.5%; right: 12.5%;
+      height: 1px; background: var(--gold-light);
+    }
+    .process-step {
+      background: var(--cream);
+      padding: 40px 24px;
+      text-align: center; position: relative;
+    }
+    .step-circle {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 300;
+      color: var(--gold);
+      position: relative; z-index: 1;
+    }
+    .process-step h3 {
+      font-size: 18px; color: var(--black); margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 13px; line-height: 1.6; color: var(--gray-mid);
+    }
+
+    /* ─── Contact ─── */
+    #contact { background: var(--black); }
+    #contact .section-header h2 { color: var(--white); }
+    #contact .section-header p { color: rgba(255,255,255,0.5); }
+    #contact .tag { color: var(--gold); }
+    #contact .gold-line { background: var(--gold); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .contact-info { color: rgba(255,255,255,0.7); }
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 300;
+      color: var(--white); margin-bottom: 24px;
+    }
+    .contact-info p { font-size: 15px; line-height: 1.7; margin-bottom: 36px; }
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .contact-item-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .contact-item-label {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 3px;
+    }
+    .contact-item-val { font-size: 15px; color: rgba(255,255,255,0.8); }
+    .social-links { display: flex; gap: 12px; margin-top: 32px; }
+    .social-link-btn {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .social-link-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.1); }
+    .contact-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 40px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 14px 16px;
+      font-size: 14px; font-family: 'Inter', sans-serif;
+      color: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--gold); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-select option { background: #1a1a1a; }
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 16px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 2px; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--gold-dark); }
+    .form-note {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      text-align: center; margin-top: 12px;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #080808;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 400;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── Floating CTA ─── */
+    .float-cta {
+      position: fixed;
+      bottom: 28px; right: 28px; z-index: 99;
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 100px;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 24px rgba(201,169,110,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .float-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,169,110,0.5); }
+    .float-cta-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+      .ig-card { max-width: 460px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { max-width: 360px; }
+      .about-badge { bottom: -16px; right: -8px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-steps::before { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .services-grid { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.tall, .gallery-item.wide { grid-column: auto; grid-row: auto; }
+      .gallery-item.wide .gallery-item-inner { aspect-ratio: 1; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">Dr. <span>Giordano</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">Quién soy</a></li>
+          <li><a href="#services">Tratamientos</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#social">Redes</a></li>
+          <li><a href="#contact" class="nav-cta">Agendar cita</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Copy -->
+        <div>
+          <div class="hero-eyebrow">
+            <div class="line"></div>
+            <span>Medicina Estética · Monterrey</span>
+          </div>
+          <h1 class="hero-title">
+            Tu mejor versión,<br><em>sin cirugía</em>
+          </h1>
+          <p class="hero-subtitle">Dr. Giordano Bruno Espinosa · @dr_giordano_espinosa</p>
+          <p class="hero-desc">
+            Especialista en Medicina Estética y Antienvejecimiento. Más de 40 tratamientos no invasivos diseñados para realzar tu belleza natural con resultados reales, seguros y duraderos.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Agendar mi cita</a>
+            <a href="#services" class="btn-outline">Ver tratamientos</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">140<sup>K</sup></div>
+              <div class="hero-stat-label">Seguidores IG</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">800<sup>K</sup></div>
+              <div class="hero-stat-label">Seguidores TikTok</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">40<sup>+</sup></div>
+              <div class="hero-stat-label">Tratamientos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Instagram Card -->
+        <div>
+          <div class="ig-card">
+            <div class="ig-card-header">
+              <div class="ig-profile-row">
+                <div class="ig-avatar-wrap">
+                  <div class="ig-avatar">
+                    <img src="assets/instagram/perfil.jpg" alt="Dr. Giordano Espinosa" />
+                  </div>
+                </div>
+                <div class="ig-name-block">
+                  <div class="ig-handle">
+                    dr_giordano_espinosa
+                    <div class="ig-verified">✓</div>
+                  </div>
+                  <div class="ig-name">Dr. Giordano Espinosa</div>
+                </div>
+                <button class="ig-follow-btn">Seguir</button>
+              </div>
+              <div class="ig-stats-row">
+                <div>
+                  <div class="ig-stat-val">450+</div>
+                  <div class="ig-stat-key">publicaciones</div>
+                </div>
+                <div>
+                  <div class="ig-stat-val">140K</div>
+                  <div class="ig-stat-key">seguidores</div>
+                </div>
+                <div>
+                  <div class="ig-stat-val">862</div>
+                  <div class="ig-stat-key">seguidos</div>
+                </div>
+              </div>
+            </div>
+            <div class="ig-bio">
+              <strong>Dr. Giordano Espinosa 🥼</strong>
+              <div class="ig-category">Médico Estético · Medicina Estética y Antienvejecimiento</div>
+              ✨ +40 tratamientos NO quirúrgicos<br>
+              📍 San Pedro Garza García, Monterrey<br>
+              🎓 Univ. Complutense de Madrid<br>
+              📲 TikTok: <strong>800K seguidores</strong>
+              <a href="#contact" class="ig-link">🔗 drgiordano.com.mx</a>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-grid-item"><img src="assets/instagram/galeria1.jpg" alt="Botox" /></div>
+              <div class="ig-grid-item"><img src="assets/instagram/galeria2.jpg" alt="Botox resultado" /></div>
+              <div class="ig-grid-item"><img src="assets/instagram/galeria3.jpg" alt="Rinomodelación" /></div>
+              <div class="ig-grid-item"><img src="assets/instagram/galeria4.jpg" alt="Diseño de labios" /></div>
+              <div class="ig-grid-item"><img src="assets/instagram/galeria5.jpg" alt="Liftera" /></div>
+              <div class="ig-grid-item"><img src="assets/instagram/galeria6.jpg" alt="Liftera resultado" /></div>
+            </div>
+            <div class="ig-social-bar">
+              <a href="https://www.instagram.com/dr_giordano_espinosa/" target="_blank" class="ig-social-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+              </a>
+              <a href="https://www.tiktok.com/@dr.giordano" target="_blank" class="ig-social-link">
+                <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.77a4.85 4.85 0 01-1.07-.08z"/></svg>
+                TikTok
+              </a>
+              <span class="ig-tiktok-badge">800K</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-image-main">
+            <img src="assets/instagram/doctor-en-consulta.jpg" alt="Dr. Giordano Espinosa" />
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num">10+</div>
+            <div class="about-badge-text">Años de experiencia</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="gold-line"></span>
+          <span class="tag">Quién soy</span>
+          <h2>Medicina estética con<br>criterio y precisión</h2>
+          <p>
+            Soy médico cirujano egresado de la <strong>Universidad de Monterrey</strong> y especialista en Medicina Estética y Antienvejecimiento por la <strong>Universidad Complutense de Madrid</strong>, España.
+          </p>
+          <p>
+            Mi enfoque combina formación europea de vanguardia con el entendimiento de la belleza latinoamericana. Creo en resultados naturales, no en transformaciones exageradas: mi objetivo siempre es potenciar lo que ya tienes.
+          </p>
+          <div class="credentials">
+            <div class="credential-item">
+              <div class="credential-icon">🎓</div>
+              <div>
+                <div class="credential-title">Médico Cirujano</div>
+                <div class="credential-sub">Universidad de Monterrey, México · Cédula 9544683</div>
+              </div>
+            </div>
+            <div class="credential-item">
+              <div class="credential-icon">🇪🇸</div>
+              <div>
+                <div class="credential-title">Especialista en Medicina Estética y Antienvejecimiento</div>
+                <div class="credential-sub">Universidad Complutense de Madrid, España</div>
+              </div>
+            </div>
+            <div class="credential-item">
+              <div class="credential-icon">📍</div>
+              <div>
+                <div class="credential-title">Consultorio en San Pedro Garza García</div>
+                <div class="credential-sub">Río de la Plata 206, Col. Del Valle, Monterrey, NL</div>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Conoce mi trabajo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header center">
+        <span class="gold-line"></span>
+        <span class="tag">Tratamientos</span>
+        <h2>Más de 40 procedimientos<br>sin cirugía</h2>
+        <p>Todos los tratamientos son no invasivos. Sin bisturí, sin recuperación larga, con resultados visibles desde la primera sesión.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-icon">💉</div>
+          <h3>Toxina Botulínica (Botox®)</h3>
+          <p>Elimina líneas de expresión y arrugas de forma temporal y natural. El tratamiento más popular del mundo para rejuvenecer sin cirugía.</p>
+          <span class="service-tag">→ Resultado inmediato</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-icon">✨</div>
+          <h3>Ácido Hialurónico</h3>
+          <p>Rellenos faciales para restaurar volumen, hidratar desde dentro y suavizar surcos nasolabiales, ojeras y pómulos.</p>
+          <span class="service-tag">→ Duración 12-18 meses</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-icon">👃</div>
+          <h3>Rinomodelación</h3>
+          <p>Corrección del perfil y forma de la nariz sin cirugía, usando ácido hialurónico. Resultados inmediatos y completamente reversibles.</p>
+          <span class="service-tag">→ Sin tiempo de recuperación</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-icon">💋</div>
+          <h3>Aumento y Perfilado de Labios</h3>
+          <p>Diseño personalizado para dar volumen, definir el arco de cupido y proyectar el perfil labial de forma proporcional y natural.</p>
+          <span class="service-tag">→ 100% personalizado</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-icon">✦</div>
+          <h3>Perfilado Mandibular</h3>
+          <p>Define la mandíbula y el mentón con ácido hialurónico. Ideal para marcar el ángulo mandibular y lograr una cara más estructurada.</p>
+          <span class="service-tag">→ Tendencia global</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div class="service-icon">⚡</div>
+          <h3>HIFU · Liftera (Lifting sin bisturí)</h3>
+          <p>Tecnología de ultrasonido focalizado que tensar y levanta la piel del rostro y cuello sin anestesia ni recuperación. El lifting no quirúrgico más efectivo.</p>
+          <span class="service-tag">→ Efecto lifting duradero</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">07</div>
+          <div class="service-icon">🩸</div>
+          <h3>PRP · Plasma Rico en Plaquetas</h3>
+          <p>Terapia regenerativa con tu propia sangre para estimular colágeno, mejorar textura de piel y tratar caída del cabello.</p>
+          <span class="service-tag">→ 100% natural</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">08</div>
+          <div class="service-icon">👁️</div>
+          <h3>Lifting de Cejas</h3>
+          <p>Eleva y define las cejas con puntos estratégicos de toxina botulínica. Abre la mirada y rejuvenece el tercio superior del rostro.</p>
+          <span class="service-tag">→ Efecto inmediato</span>
+        </div>
+        <div class="service-card">
+          <div class="service-num">09</div>
+          <div class="service-icon">🌟</div>
+          <h3>+40 Tratamientos Disponibles</h3>
+          <p>Skinboosters, bioestimuladores de colágeno, mesoterapia capilar, tratamientos corporales y más. Agenda tu valoración personalizada.</p>
+          <span class="service-tag">→ Consulta sin costo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header center">
+        <span class="tag">Galería</span>
+        <h2 style="color:white">Resultados reales</h2>
+        <p>Casos tratados en consulta. Cada resultado es único y diseñado para resaltar la belleza natural de cada paciente.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/galeria1.jpg" alt="Botox" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">Botox · Ácido Hialurónico</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/galeria3.jpg" alt="Rinomodelación" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">Rinomodelación</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/galeria4.jpg" alt="Diseño de labios" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">Diseño de Labios</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/galeria2.jpg" alt="Botox resultado" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">Perfilado Mandibular</span></div>
+        </div>
+        <div class="gallery-item wide">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/doctor-en-consulta.jpg" alt="Dr. Giordano en consulta" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">En consulta</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner">
+            <img src="assets/instagram/galeria5.jpg" alt="HIFU Liftera" />
+          </div>
+          <div class="gallery-item-overlay"><span class="gallery-overlay-text">HIFU · Liftera</span></div>
+        </div>
+      </div>
+      <div class="gallery-cta">
+        <a href="https://www.instagram.com/dr_giordano_espinosa/" target="_blank">
+          Ver galería completa en Instagram →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section id="social">
+    <div class="container">
+      <div class="section-header center">
+        <span class="gold-line"></span>
+        <span class="tag">Presencia digital</span>
+        <h2>Una voz de referencia<br>en medicina estética</h2>
+        <p>El Dr. Giordano es uno de los médicos estéticos más seguidos en México, con contenido educativo que llega a millones.</p>
+      </div>
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="social-icon">📸</div>
+          <div class="social-platform">Instagram</div>
+          <div class="social-num">140<sup>K</sup></div>
+          <div class="social-unit">seguidores en @dr_giordano_espinosa</div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">🎵</div>
+          <div class="social-platform">TikTok</div>
+          <div class="social-num">800<sup>K</sup></div>
+          <div class="social-unit">seguidores · +8M likes · @dr.giordano</div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">👥</div>
+          <div class="social-platform">Facebook</div>
+          <div class="social-num">271<sup>K</sup></div>
+          <div class="social-unit">seguidores · medicinaestetica.drgiordano</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header center">
+        <span class="gold-line"></span>
+        <span class="tag">Tu experiencia</span>
+        <h2>¿Cómo es una cita<br>con el Dr. Giordano?</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-circle">01</div>
+          <h3>Valoración gratuita</h3>
+          <p>Estudiamos tu caso, analizamos tus objetivos y diseñamos el plan ideal para ti. Sin compromiso.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">02</div>
+          <h3>Plan personalizado</h3>
+          <p>Te explicamos qué tratamiento es el más adecuado, el resultado esperado y el proceso completo.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">03</div>
+          <h3>Procedimiento</h3>
+          <p>Todos los tratamientos son ambulatorios, sin cirugía y con el mínimo tiempo de recuperación posible.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">04</div>
+          <h3>Seguimiento</h3>
+          <p>Cita de control incluida para verificar resultados y asegurarnos de que estés completamente satisfecho/a.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="gold-line"></span>
+        <span class="tag">Contacto</span>
+        <h2>Agenda tu valoración</h2>
+        <p>Respondo personalmente cada mensaje. Escríbeme y te contesto en menos de 24 horas.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Estoy aquí para ayudarte a lucir como siempre has querido.</h3>
+          <p>Sin compromisos, sin presión. Solo una conversación honesta sobre lo que puedo hacer por ti.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Consultorio</div>
+                <div class="contact-item-val">Río de la Plata 206, Col. Del Valle<br>San Pedro Garza García, NL, México</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <div class="contact-item-label">Teléfono / WhatsApp</div>
+                <div class="contact-item-val">
+                  <a href="https://wa.me/528127132629" target="_blank" style="color:rgba(255,255,255,0.8)">
+                    +52 81 2713 2629
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-val">
+                  <a href="mailto:dr.espinosa.giordano@gmail.com" style="color:rgba(255,255,255,0.8)">
+                    dr.espinosa.giordano@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/dr_giordano_espinosa/" target="_blank" class="social-link-btn" title="Instagram">📸</a>
+            <a href="https://www.tiktok.com/@dr.giordano" target="_blank" class="social-link-btn" title="TikTok">🎵</a>
+            <a href="https://www.facebook.com/medicinaestetica.drgiordano/" target="_blank" class="social-link-btn" title="Facebook">📘</a>
+            <a href="https://wa.me/528127132629" target="_blank" class="social-link-btn" title="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="mailto:dr.espinosa.giordano@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-input" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Teléfono / WhatsApp</label>
+                <input type="tel" class="form-input" placeholder="+52 81 ..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tratamiento de interés</label>
+              <select class="form-select form-input">
+                <option value="">¿Qué te interesa?</option>
+                <option>Botox / Toxina Botulínica</option>
+                <option>Ácido Hialurónico</option>
+                <option>Rinomodelación</option>
+                <option>Aumento de Labios</option>
+                <option>Perfilado Mandibular</option>
+                <option>HIFU · Liftera</option>
+                <option>PRP</option>
+                <option>Lifting de Cejas</option>
+                <option>Valoración general</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mensaje (opcional)</label>
+              <textarea class="form-textarea" placeholder="Cuéntame qué tienes en mente..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Enviar mensaje →</button>
+            <p class="form-note">También puedes escribirme directamente por WhatsApp: +52 81 2713 2629</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Dr. <span>Giordano</span> Espinosa</div>
+        <div class="footer-copy">© 2026 · Medicina Estética · San Pedro Garza García, Monterrey</div>
+        <div class="footer-links">
+          <a href="#about">Quién soy</a>
+          <a href="#services">Tratamientos</a>
+          <a href="#contact">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="https://wa.me/528127132629" target="_blank" class="float-cta">
+    <div class="float-cta-dot"></div>
+    Agendar por WhatsApp
+  </a>
+
+  <script>
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.padding = window.scrollY > 60 ? '12px 0' : '20px 0';
+    });
+
+    // Mobile nav
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    const closeMenu = () => links.classList.remove('nav-open');
+    toggle.addEventListener('click', () => links.classList.toggle('nav-open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+
+    // Animate on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .social-card, .process-step, .gallery-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
